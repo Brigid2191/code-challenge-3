@@ -1,22 +1,26 @@
-document.addEventListener('DOMContentLoaded', function () {
-  // Base URL for API
-  const baseUrl = 'http://localhost:3000';
 
-  // Function to fetch movie data
+// I have assigned my baseUrl const my link as a value
+const baseUrl = 'http://localhost:3000';
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    
+ // This is a fetch request function from the baseUrl link in films
   async function fetchMovies() {
       const response = await fetch(`${baseUrl}/films`);
       const data = await response.json();
       return data;
+    
   }
 
-  // Function to fetch movie details by ID
+  // This is a function that uses an ID to fetch the fetchMovieById function
   async function fetchMovieById(id) {
       const response = await fetch(`${baseUrl}/films/${id}`);
       const data = await response.json();
       return data;
   }
 
-  // Function to update tickets sold
+  // This is a function that does updates on what is ticket is sold
   async function updateTicketsSold(id, ticketsSold) {
       await fetch(`${baseUrl}/films/${id}`, {
           method: 'PATCH',
@@ -27,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 
-  // Function to render movie details
+  // This is a function that takes movies as a parameter and passess its deta
   async function renderMovieDetails(movie) {
       const poster = document.getElementById('poster');
       const title = document.getElementById('title');
@@ -72,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function () {
       };
   }
 
-  // Function to render movies menu
   async function renderMoviesMenu() {
       const movies = await fetchMovies();
       const filmsList = document.getElementById('films');
@@ -90,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 
-  // Initialize the app
+  //Rendering that movie  by calling it
   renderMoviesMenu();
-  fetchMovieById(1).then(renderMovieDetails);
+  fetchMovieById(11).then(renderMovieDetails);
 });
