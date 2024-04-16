@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const response = await fetch(`${baseUrl}/films`);
       const data = await response.json();
       return data;
-    
+
   }
 
   // This is a function that uses an ID to fetch the fetchMovieById function

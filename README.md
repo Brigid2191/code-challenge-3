@@ -177,8 +177,5 @@ attempting the bonus deliverables!**
    additional GET request to access the movie's details.
 
 
-
-
-
-
-
+# Live Link
+[https://bakora2001.github.io/code-challenge-3/]
